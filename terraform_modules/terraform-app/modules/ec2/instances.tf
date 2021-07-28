@@ -21,7 +21,6 @@ resource "aws_instance" "webserver" {
    security_groups = ["${var.security_group}"]
   internal        = false
   
-
   listener {
     instance_port     = 80
     instance_protocol = "http"
@@ -37,7 +36,6 @@ resource "aws_instance" "webserver" {
     interval            = 30
   }
 
-  
   instances                   = aws_instance.webserver.*.id
   cross_zone_load_balancing   = true
   idle_timeout                = 400
