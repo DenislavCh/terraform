@@ -11,6 +11,7 @@ module "my_vpc" {
   
 }
 
+
 module "my_ec2" {
   source        = "../terraform_modules/terraform-app/modules/ec2"
   ec2_count     = 2
